@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>amznStore.Common.Infrastructure</AssemblyName>
+    <RootNamespace>amznStore.Common.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.11.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
+    <PackageReference Include="SeriLog" Version="2.10.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+</Project>

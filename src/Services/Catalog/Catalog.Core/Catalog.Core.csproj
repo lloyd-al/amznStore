@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>amznStore.Services.Catalog.Core</AssemblyName>
+    <RootNamespace>amznStore.Services.Catalog.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.12.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.12.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Core\Core.csproj" />
+  </ItemGroup>
+
+</Project>

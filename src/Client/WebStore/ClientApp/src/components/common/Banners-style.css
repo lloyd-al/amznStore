@@ -1,0 +1,21 @@
+﻿.banner {
+    position: relative;
+    margin: 0px auto auto 0px;
+    height:320px;
+}
+
+.arrow_left {
+    position: absolute;
+    top: 120px;
+    left: 16px;
+    color: #ffffff;
+    opacity: 0.4;
+}
+
+.arrow_right {
+    position: absolute;
+    top: 120px;
+    right: 16px;
+    color: #ffffff;
+    opacity: 0.4;
+}

@@ -1,0 +1,11 @@
+﻿.home {
+    justify-content: center;
+    background-color:cornsilk;
+}
+
+.home__row {
+    display: flex;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+}
