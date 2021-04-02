@@ -2,44 +2,44 @@
   "Routes": [
     //Catalog API
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/Category",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": "44353"
         }
       ],
-      "UpstreamPathTemplate": "/webgateway/Catalog",
+      "UpstreamPathTemplate": "/webgateway/Category",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/Category/{id}",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "locahost",
           "Port": "44353"
         }
       ],
-      "UpstreamPathTemplate": "/webgateway/Catalog/{id}",
+      "UpstreamPathTemplate": "/webgateway/Category/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/GetCategoriesByName​/{name}",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/Category/GetCategoriesByName​/{name}",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "locahost",
           "Port": "44353"
         }
       ],
-      "UpstreamPathTemplate": "/webgateway/Catalog/GetCategoriesByName​/{name}",
+      "UpstreamPathTemplate": "/webgateway/Category/GetCategoriesByName​/{name}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -51,7 +51,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "locahost",
@@ -63,7 +63,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/GetProductsByName​/{name}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "locahost",
@@ -75,7 +75,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/GetProductsByCategory/{category}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "locahost",

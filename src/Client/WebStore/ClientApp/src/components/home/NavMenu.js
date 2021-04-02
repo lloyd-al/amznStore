@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ReactFlagsSelect from 'react-flags-select';
@@ -11,10 +11,15 @@ import './NavMenu-style.css';
 function NavMenu() {
     const [selected, setSelected] = useState('IN');
     const [user, setUser] = useState();
+    let history = useHistory();
 
     useEffect(() => {
         setUser('');
     }, [user]);
+
+    function ShowUserProfile() {
+        history.push("/");
+    }
 
     return (
         <nav className="header">
@@ -35,8 +40,8 @@ function NavMenu() {
             <div className="header__mid-pane">
                 <div className="header__search">
                     <label className="header__search-label">All </label>
-                    <select className="header__search-select">
-                        <option selected="selected" value="aps">All Departments</option>
+                    <select className="header__search-select" defaultValue={'all-dept'}>
+                        <option value="all-dept">All Departments</option>
                         <option value="alexa-skills">Alexa Skills</option>
                         <option value="instant-video">Amazon Video</option>
                         <option value="appliances">Appliances</option>
@@ -74,7 +79,7 @@ function NavMenu() {
                         <option value="videogames">Video Games</option>
                         <option value="wine">Wine</option>
                     </select>
-                    <input className="header__search-input" type="text" autocomplete="off" />
+                    <input className="header__search-input" type="text" autoComplete="off" />
                     <SearchIcon className="header__search-button" style={{ fontSize: 40 }} />
                 </div>
             </div>
@@ -89,8 +94,8 @@ function NavMenu() {
             </div>
 
             <div className="header__nav-option2">
-                <Link to="/login" className="header__link">
-                    <div onClick="" className="header__option">
+                <Link to="/login" onClick={ShowUserProfile} className="header__link">
+                    <div className="header__option">
                         <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.firstName}</span>
                         <span className="header__optionLineTwo">Account & Lists</span>
                     </div>
@@ -108,9 +113,7 @@ function NavMenu() {
                 <Link to="/checkout" className="header__link">
                     <div className="header__optionBasket">
                         <span className="header__basketCount">0</span>
-                        <Link to="/">
-                            <img className="header__cart" src={cart} alt="Shopping Cart" />
-                        </Link>
+                        <img className="header__cart" src={cart} alt="Shopping Cart" />
                     </div>
                 </Link>
             </div>

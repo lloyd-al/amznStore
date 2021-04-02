@@ -69,7 +69,7 @@ namespace amznStore.Services.Catalog.Api.Controllers.v1
             return CreatedAtRoute("GetCategory", new { id = category.Id }, category);
         }
 
-        [HttpPut]
+        [HttpPut("{id:length(24)}")]
         [ProducesResponseType(typeof(Category), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> UpdateCategory([FromBody] Category category)
         {
