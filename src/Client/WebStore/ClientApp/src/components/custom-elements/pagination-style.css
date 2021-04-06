@@ -1,0 +1,32 @@
+﻿.root {
+    width:100%;
+}
+.pagination {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.current-page {
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.page-link {
+    padding: 0.75rem 1rem;
+    min-width: 3.5rem;
+    text-align: center;
+    box-shadow: none !important;
+    border-color: black !important;
+    color: gray;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.page-item.active {
+    filter: saturate(darken(#ced4da, 50%), 5%) !important;
+    filter: saturate(lighten(#ced4da, 7.5%), 2.5%) !important;
+    border-color: red !important;
+}

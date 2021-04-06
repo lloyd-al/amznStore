@@ -2,18 +2,17 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import { Grid } from '@material-ui/core';
 
 import { selectProductCollection, selectProductLoading, selectProductError, selectProductFilter } from '../../redux/product/productSelectors';
 import { getAllProducts } from '../../redux/product/productActions';
 import ProductItem from './product-item';
 import Pagination from '../custom-elements/pagination';
 
-import './catalog-main.css';
+import './product-item-style.css';
 
 const ProductList = (props) => {
-
     const { productFilter, products, loading, error, getPagedProducts } = props;
-    console.log(productFilter);
     const { currentPage, totalPages, pageSize } = productFilter;
 
     useEffect(() => {
@@ -32,15 +31,16 @@ const ProductList = (props) => {
                     <p><em>Oops... Something Went Wrong</em></p>
                 ) : (
                         <div className="container">
-                            <div className='product-preview'>
-                                <div className='product-preview_body'>
-                                    {products
-                                        .map(product => (
+                            <h2>Clothing</h2>
+                            <Grid container item direction="row" justify="center" alignItems="center" xs={12} spacing={3} className="root">
+                                {products
+                                    .map(product => (
+                                        <Grid item key={product.id} xs={3}>
                                             <ProductItem key={product.id} product={product} />
-                                        ))}
-                                </div>
-                            </div>
-                            <div className="col-sm-6">
+                                        </Grid>
+                                    ))}
+                            </Grid>
+                            <div className="pagination">
                                 <Pagination currentPage={currentPage} totalPages={totalPages} pageSize={pageSize} handlePagination={handlePageClick} />
                             </div>
                         </div>

@@ -1,28 +1,74 @@
 ﻿import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter, useHistory, Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
 
-import CustomButton from '../custom-elements/custom-button';
-import { addItem } from '../../redux/cart/cart-actions';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        height: 380,
+        width: 260,
+        padding: theme.spacing(3),
+        marginLeft: theme.spacing(3),
+        marginBottom: theme.spacing(5),
+        position: 'relative',
+        background: 'white',
+        direction: 'column',
+        textAlign: 'center',
+        alignItems: 'center',
+        justify: 'center',
+        fontWeight: 400,
+    },
+    image: {
+        height: 240,
+        width: 200,
+        cursor: 'pointer',
+    },
+    price: {
+        textAlign: 'left',
+        fontWeight: 300,
+    },
+    currentprice: {
+        fontWeight: 500,
+        color: '#800000',
+    },
+    originalprice: {
+        textDecoration: 'line-through',
+        marginRight: '10px',
+        marginLeft: '5px',
 
-import './product-item-style.css';
+    },
+}));
 
-const ProductItem = ({ product, addItem  }) => {
-    const { productName, price, imageUrl } = product;
+const ProductItem = ({ product }) => {
+    const classes = useStyles();
+    let history = useHistory();
+
+    const priceDetail = (cprice, oprice) => {
+        if (oprice > cprice) {
+            return (<div><span className={classes.currentprice}>${currentPrice}</span><span className={classes.originalprice}>${originalPrice}</span><span>Save ${(oprice - cprice)} ({(100-(Math.floor((cprice / oprice) * 100)))}%)</span></div>);
+        } else {
+            return (<div><span className={classes.currentprice}>${currentPrice}</span></div>);
+        }
+    } 
+
+    const { id, productName, currentPrice, originalPrice, imageUrl } = product;
 
     return (
-        <div className='collection-item'>
-            <div className='image' style={{ backgroundImage: `url(${imageUrl})` }} />
-            <div className='collection-footer'>
-                <span className='name'>{productName}</span>
-                <span className='price'>{price}</span>
+         <Paper className={classes.paper} square={true}>
+            <div>
+                <div to={`/product/${productName}`} onClick={() => history.push({ pathname: `/shop/${productName}`, state: { id, productName } })}>
+                    <img src={imageUrl} alt={productName.toUpperCase()} className={classes.image}  />
+                </div>
             </div>
-            <CustomButton onClick={() => addItem(product)} inverted>Add to Cart</CustomButton>
-        </div>
+            <div className={classes.price}>{priceDetail(currentPrice, originalPrice)}</div>
+            <div>{productName}</div>
+        </Paper>
     );
 }
 
-const mapDispatchToProps = dispatch => ({
-    addItem: product => dispatch(addItem(product))
-});
+export default withRouter(ProductItem);
 
-export default connect(null, mapDispatchToProps)(ProductItem);

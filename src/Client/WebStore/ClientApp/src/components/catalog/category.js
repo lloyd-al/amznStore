@@ -35,7 +35,7 @@ const Categories = (props) => {
                 ) : (
                         <Grid container item direction="row" justify="center" alignItems="center" xs={12} spacing={3} className={classes.root}>
                             <Grid item key="AllClothing" xs={3}>
-                                <CategoryItem id="0" categoryName="" imageUrl={clothing} />
+                                <CategoryItem id="all" categoryName="All Clothing" imageUrl={clothing} />
                             </Grid>
 
                             {categories && categories.map(({ id, ...otherSectionProps }) => (

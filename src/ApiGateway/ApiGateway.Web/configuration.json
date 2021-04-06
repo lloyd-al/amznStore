@@ -18,7 +18,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "locahost",
+          "Host": "localhost",
           "Port": "44353"
         }
       ],
@@ -30,7 +30,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "locahost",
+          "Host": "localhost",
           "Port": "44353"
         }
       ],
@@ -47,43 +47,47 @@
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Product",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "SwaggerKey": "Catalog"
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "locahost",
+          "Host": "localhost",
           "Port": "44353"
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Product/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "SwaggerKey": "Catalog"
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/GetProductsByName​/{name}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "locahost",
+          "Host": "localhost",
           "Port": "44353"
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Product/GetProductsByName​/{name}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "Catalog"
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product/GetProductsByCategory/{category}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "locahost",
+          "Host": "localhost",
           "Port": "44353"
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Product/GetProductsByCategory/{category}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "Catalog"
     },
     //Basket API
     {
@@ -280,5 +284,21 @@
       "UpstreamPathTemplate": "/User/change-password",
       "UpstreamHttpMethod": [ "POST" ]
     }
-  ]
+  ],
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "Catalog",
+      "Config": [
+        {
+          "Name": "Catalog API",
+          "Version": "v1",
+          "Url": "https://localhost:44353/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
 }

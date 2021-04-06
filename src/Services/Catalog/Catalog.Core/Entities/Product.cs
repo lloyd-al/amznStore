@@ -1,7 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace amznStore.Services.Catalog.Core.Entities
 {
@@ -11,11 +10,9 @@ namespace amznStore.Services.Catalog.Core.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        [Required(ErrorMessage = "Product name is a required field.")]
         public string ProductName { get; set; }
 
         [BsonRepresentation(BsonType.ObjectId)]
-        [Required(ErrorMessage = "Category is a required field.")]
         public string Category { get; set; }
         
         public string Summary { get; set; }
@@ -23,6 +20,10 @@ namespace amznStore.Services.Catalog.Core.Entities
         public string Description { get; set; }
         
         public string ImageUrl { get; set; }
+
+        public decimal CurrentPrice { get; set; }
+
+        public decimal OriginalPrice { get; set; }
 
         [BsonElementAttribute("variantdetails")]
         public List<ProductVariantDetails> VariantDetails { get; set; }

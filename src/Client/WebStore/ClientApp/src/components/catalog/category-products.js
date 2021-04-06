@@ -2,12 +2,13 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import { Grid } from '@material-ui/core';
 
 import ProductItem from './product-item';
 import { selectProductCollection, selectProductLoading, selectProductError } from '../../redux/product/productSelectors';
 import { getCategoryProducts } from '../../redux/product/productActions';
 
-import './catalog-main.css';
+import './product-item-style.css';
 
 const CategoryProducts = (props) => {
     const { products, loading, error, categoryId, categoryName, getCategoryProducts } = props;
@@ -24,14 +25,16 @@ const CategoryProducts = (props) => {
             ) : error ? (
                 <p><em>Oops... Something Went Wrong</em></p>
                 ) : (
-                        <div className='product-preview'>
-                            <div className='product-preview_title'>{ categoryName }</div>
-                            <div className='product-preview_body'>
+                        <div className="container">
+                            <h2>{categoryName}</h2>
+                            <Grid container item direction="row" justify="center" alignItems="center" xs={12} spacing={3} className="root">
                                 {products
                                     .map(product => (
-                                        <ProductItem key={product.id} product={product} />
+                                        <Grid item key={product.id} xs={3}>
+                                            <ProductItem key={product.id} product={product} />
+                                        </Grid>
                                     ))}
-                            </div>
+                            </Grid>
                         </div>
                     )
             }

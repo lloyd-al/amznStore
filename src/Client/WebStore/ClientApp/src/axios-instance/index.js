@@ -7,7 +7,7 @@ export const amznApiInstance = axios.create({
         'Content-Type': 'text/json',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept',
-        'Access-Control-Allow-Methods': 'POST,GET,OPTIONS,PUT,DELETE'
+        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE'
     }
 });
 

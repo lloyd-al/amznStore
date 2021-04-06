@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import HomePage from './pages/home/home-page';
+import { HomePage, ShopPage } from './pages';
 
 import './App-style.css'
 
@@ -12,6 +12,7 @@ export default class App extends Component {
     return (
       <Layout>
             <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
       </Layout>
     );
   }

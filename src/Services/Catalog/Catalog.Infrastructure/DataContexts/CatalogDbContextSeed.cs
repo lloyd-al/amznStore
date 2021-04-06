@@ -1,6 +1,7 @@
 ﻿using amznStore.Services.Catalog.Core.Entities;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 
 namespace amznStore.Services.Catalog.Infrastructure.DataContexts
@@ -79,7 +80,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Brown Brim Hat",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/ZYW3VTp/brown-brim.png",
-                    VariantDetails = FSVariantList(25)
+                    CurrentPrice = 25,
+                    OriginalPrice = 25,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -89,7 +92,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Freesize Blue Beanie",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/ypkgK0X/blue-beanie.png",
-                    VariantDetails = FSVariantList(18)
+                    CurrentPrice = 18,
+                    OriginalPrice = 28,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -99,7 +104,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Brown Cowboy Hat",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
-                    VariantDetails = FSVariantList(35)
+                    CurrentPrice = 35,
+                    OriginalPrice = 35,
+                    VariantDetails = FSVariantList()
                 },
             new Product()
                 {
@@ -109,7 +116,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Grey Bim Hat",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/RjBLWxB/grey-brim.png",
-                    VariantDetails = FSVariantList(25)
+                    CurrentPrice = 25,
+                    OriginalPrice = 28,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -119,7 +128,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Freesie Green Beanie",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/YTjW3vF/green-beanie.png",
-                    VariantDetails = FSVariantList(18)
+                    CurrentPrice = 18,
+                    OriginalPrice = 25,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -129,7 +140,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Palm Tree Cap",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
-                    VariantDetails = FSVariantList(14)
+                    CurrentPrice = 14,
+                    OriginalPrice = 18,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -139,7 +152,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Red Beanie",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/bLB646Z/red-beanie.png",
-                    VariantDetails = FSVariantList(18)
+                    CurrentPrice = 18,
+                    OriginalPrice = 38,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -149,7 +164,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Wolf Cap",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/1f2nWMM/wolf-cap.png",
-                    VariantDetails = FSVariantList(14)
+                    CurrentPrice = 14,
+                    OriginalPrice = 14,
+                    VariantDetails = FSVariantList()
                 },
                 new Product()
                 {
@@ -159,7 +176,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Blue Snapback",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/X2VJP2W/blue-snapback.png",
-                    VariantDetails = FSVariantList(16)
+                    CurrentPrice = 16,
+                    OriginalPrice = 25,
+                    VariantDetails = FSVariantList()
                 },
                 //Sneakers
                 new Product()
@@ -170,7 +189,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New ADIDAS Sneakers for Workout",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/0s3pdnc/adIdas-nmd.png",
-                    VariantDetails = ShoeVariantList(220)
+                    CurrentPrice = 220,
+                    OriginalPrice = 250,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -180,7 +201,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New ADIDAS Sneakers for Workout",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/dJbG1cT/yeezy.png",
-                    VariantDetails = ShoeVariantList(280)
+                    CurrentPrice = 280,
+                    OriginalPrice = 320,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -190,7 +213,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New Converse Sneakers for Casual Walk",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/bPmVXyP/black-converse.png",
-                    VariantDetails = ShoeVariantList(110)
+                    CurrentPrice = 110,
+                    OriginalPrice = 210,
+                    VariantDetails = ShoeVariantList()
                 },new Product()
                 {
                     Id = ObjectId.GenerateNewId().ToString(),
@@ -199,7 +224,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New Nike Sneakers for Running",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/1RcFPk0/white-nike-high-tops.png",
-                    VariantDetails = ShoeVariantList(160)
+                    CurrentPrice = 160,
+                    OriginalPrice = 250,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -209,7 +236,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New Nike Sneakers for Running",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/QcvzydB/nikes-red.png",
-                    VariantDetails = ShoeVariantList(160)
+                    CurrentPrice = 160,
+                    OriginalPrice = 225,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -219,7 +248,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New Nike Sneakers for Running",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/fMTV342/nike-brown.png",
-                    VariantDetails = ShoeVariantList(160)
+                    CurrentPrice = 160,
+                    OriginalPrice = 160,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -229,7 +260,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Lastest Sneakers for Regular Exercise",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/w4k6Ws9/nike-funky.png",
-                    VariantDetails = ShoeVariantList(190)
+                    CurrentPrice = 190,
+                    OriginalPrice = 250,
+                    VariantDetails = ShoeVariantList()
                 },
                 new Product()
                 {
@@ -239,7 +272,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Lastest Sneakers for Regular Exercise",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/Mhh6wBg/timberlands.png",
-                    VariantDetails = ShoeVariantList(200)
+                    CurrentPrice = 200,
+                    OriginalPrice = 250,
+                    VariantDetails = ShoeVariantList()
                 },
                 // Jackets
                 new Product()
@@ -250,7 +285,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Jackets for Everyone",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/XzcwL5s/black-shearling.png",
-                    VariantDetails = ClothVariantList(125)
+                    CurrentPrice = 125,
+                    OriginalPrice = 250,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -260,7 +297,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Jackets for Everyone",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/s96FpdP/brown-shearling.png",
-                    VariantDetails = ClothVariantList(165)
+                    CurrentPrice = 165,
+                    OriginalPrice = 225,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -270,7 +309,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "New Nike Sneakers for Running",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/mJS6vz0/blue-jean-jacket.png",
-                    VariantDetails = ClothVariantList(90)
+                    CurrentPrice = 90,
+                    OriginalPrice = 100,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -280,7 +321,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Jackets for Everyone",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/N71k1ML/grey-jean-jacket.png",
-                    VariantDetails = ClothVariantList(105)
+                    CurrentPrice = 105,
+                    OriginalPrice = 125,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -290,7 +333,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Jackets for Everyone",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/M6hHc3F/brown-trench.png",
-                    VariantDetails = ClothVariantList(182)
+                    CurrentPrice = 182,
+                    OriginalPrice = 225,
+                    VariantDetails = ClothVariantList()
                 },
                 // Womens
                 new Product()
@@ -301,7 +346,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/7CQVJNm/blue-tank.png",
-                    VariantDetails = ClothVariantList(25)
+                    CurrentPrice = 225,
+                    OriginalPrice = 225,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -311,7 +358,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/4W2DGKm/floral-blouse.png",
-                    VariantDetails = ClothVariantList(20)
+                    CurrentPrice = 20,
+                    OriginalPrice = 25,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -321,7 +370,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/KV18Ysr/floral-skirt.png",
-                    VariantDetails = ClothVariantList(80)
+                    CurrentPrice = 80,
+                    OriginalPrice = 100,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -331,7 +382,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png",
-                    VariantDetails = ClothVariantList(82)
+                    CurrentPrice = 82,
+                    OriginalPrice = 100,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -341,7 +394,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/KmSkMbH/striped-sweater.png",
-                    VariantDetails = ClothVariantList(45)
+                    CurrentPrice = 45,
+                    OriginalPrice = 50,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -351,7 +406,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/v1cvwNf/yellow-track-suit.png",
-                    VariantDetails = ClothVariantList(135)
+                    CurrentPrice = 135,
+                    OriginalPrice = 225,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -361,7 +418,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Designer Clothing for Women",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/qBcrsJg/white-vest.png",
-                    VariantDetails = ClothVariantList(20)
+                    CurrentPrice = 20,
+                    OriginalPrice = 25,
+                    VariantDetails = ClothVariantList()
                 },
                 //Mens
                 new Product()
@@ -372,7 +431,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/xJS0T3Y/camo-vest.png",
-                    VariantDetails = ClothVariantList(325)
+                    CurrentPrice = 325,
+                    OriginalPrice = 425,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -382,7 +443,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/qMQ75QZ/floral-shirt.png",
-                    VariantDetails = ClothVariantList(20)
+                    CurrentPrice = 20,
+                    OriginalPrice = 25,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -392,7 +455,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/55z32tw/long-sleeve.png",
-                    VariantDetails = ClothVariantList(25)
+                    CurrentPrice = 25,
+                    OriginalPrice = 25,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -402,7 +467,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/RvwnBL8/pink-shirt.png",
-                    VariantDetails = ClothVariantList(32)
+                    CurrentPrice = 32,
+                    OriginalPrice = 50,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -412,7 +479,9 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
-                    VariantDetails = ClothVariantList(40)
+                    CurrentPrice = 40,
+                    OriginalPrice = 50,
+                    VariantDetails = ClothVariantList()
                 },
                 new Product()
                 {
@@ -422,40 +491,48 @@ namespace amznStore.Services.Catalog.Infrastructure.DataContexts
                     Summary = "Regular Size Menswear",
                     Description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.",
                     ImageUrl = "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
-                    VariantDetails = ClothVariantList(25)
+                    CurrentPrice = 25,
+                    OriginalPrice = 25,
+                    VariantDetails = ClothVariantList()
                 }
             };
         }
 
-        private static List<ProductVariantDetails> ClothVariantList(decimal price)
+        private static List<ProductVariantDetails> ClothVariantList()
         {
             List<ProductVariantDetails> variantList = new List<ProductVariantDetails>();
-            variantList.Add(new ProductVariantDetails() { Variant = "xs", Price = price});
-            variantList.Add(new ProductVariantDetails() { Variant = "s", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "m", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "l", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "xl", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "xxl", Price = price });
+            variantList.Add(new ProductVariantDetails() { Variant = "xs", Quantity=NextRandomRange(), Discount=0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "s", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "m", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "l", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "xl", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "xxl", Quantity = NextRandomRange(), Discount = 0 });
 
             return variantList;
         }
 
-        private static List<ProductVariantDetails> ShoeVariantList(decimal price)
+        private static List<ProductVariantDetails> ShoeVariantList()
         {
             List<ProductVariantDetails> variantList = new List<ProductVariantDetails>();
-            variantList.Add(new ProductVariantDetails() { Variant = "6", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "7", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "8", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "9", Price = price });
-            variantList.Add(new ProductVariantDetails() { Variant = "10", Price = price });
+            variantList.Add(new ProductVariantDetails() { Variant = "6", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "7", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "8", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "9", Quantity = NextRandomRange(), Discount = 0 });
+            variantList.Add(new ProductVariantDetails() { Variant = "10", Quantity = NextRandomRange(), Discount = 0 });
             return variantList;
         }
 
-        private static List<ProductVariantDetails> FSVariantList(decimal price)
+        private static List<ProductVariantDetails> FSVariantList()
         {
             List<ProductVariantDetails> variantList = new List<ProductVariantDetails>();
-            variantList.Add(new ProductVariantDetails() { Variant = "fs", Price = price });
+            variantList.Add(new ProductVariantDetails() { Variant = "fs", Quantity = NextRandomRange(), Discount = 0 });
             return variantList;
+        }
+
+        private static int NextRandomRange()
+        {
+            Random rand = new Random();
+            return rand.Next(7);
         }
     }
 }

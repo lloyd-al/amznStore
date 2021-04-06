@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     image: {
         height: 300,
         width: 200,
+        cursor: 'pointer',
     }
 }));
 
@@ -37,9 +38,18 @@ const CategoryItem = ({ id, categoryName, imageUrl }) => {
         <Paper className={classes.paper} square={true}>
             <h6>{categoryName.toUpperCase()}</h6>
             <div>
-                <Link to={`/shop/${categoryName}`} onClick={() => history.push({ pathname: `/shop/${categoryName}`, state: { id, categoryName } })}>
-                    <img src={imageUrl} alt={categoryName.toUpperCase()} className={classes.image}  />
-                </Link>
+                {
+                    (id === 'all')
+                        ? 
+                        
+                        <div to={`/shop`} onClick={() => history.push({ pathname: `/shop`, state: { id, categoryName } })}>
+                            <img src={imageUrl} alt={categoryName.toUpperCase()} className={classes.image} />
+                        </div>
+                        :
+                        <div onClick={() => history.push({ pathname: `/shop/${categoryName}`, state: { id, categoryName } })}>
+                            <img src={imageUrl} alt={categoryName.toUpperCase()} className={classes.image} />
+                        </div>
+                }
             </div>
         </Paper>
     );
