@@ -94,4 +94,5 @@ Use [MongoDB Cloud](https://www.mongodb.com/cloud) to create Catalog Database
 > npm install formik --save
 > npm install yup --save
 > npm install rxjs --save
+> 
 > npm install react-currency-format --save
