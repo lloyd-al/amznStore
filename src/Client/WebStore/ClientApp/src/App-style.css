@@ -1,4 +1,8 @@
 /* Provide sufficient contrast against white background */
+body {
+    background-color:lightgray;
+}
+
 a {
   color: #0366d6;
 }

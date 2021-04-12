@@ -1,0 +1,98 @@
+﻿.productMain {
+    height: 100vh;
+    background-color:white;
+    padding: 5px;
+}
+
+.productImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.productDescription {
+    width: 100%;
+}
+
+.productPrice {
+    width: 100%;
+}
+
+.productDetail {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.price {
+    text-align: left;
+    font-weight: 300;
+}
+
+.currentprice {
+    font-weight: 500;
+    color: #800000;
+    margin-left: 10px;
+}
+
+.originalprice {
+    text-decoration: line-through;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+.productSize {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight:bold;
+}
+
+.buy_column {
+    width: 260px;
+    padding: 2px 2px 2px 2px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center
+}
+
+.btn_AddCart {
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    font-size:medium;
+    font-weight:500;
+    background: #ffc100;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 8px 8px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.btn_BuyNow {
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    font-size: medium;
+    font-weight: 500;
+    background: #ffd800;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 8px 8px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.errorMessage {
+    border-radius: 25px;
+    background: #edc7c7;
+    border: 2px solid #ff6a00;
+    font-weight:bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size:small;
+    padding: 5px;
+}

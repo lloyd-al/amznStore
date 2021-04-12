@@ -142,23 +142,3 @@
     width: 8%;
 }
 
-.header__optionBasket {
-    display: inline;
-    position: relative;
-    align-items: center;
-}
-
-.header__cart {
-    height: 40px;
-    background: transparent;
-    padding: 7px 20px 7px 6px;
-    position: relative;
-}
-
-.header__basketCount {
-    position: absolute;
-    color: #f08804;
-    font-size: 16px;
-    font-weight: 700;
-    margin-left: 22px;
-}

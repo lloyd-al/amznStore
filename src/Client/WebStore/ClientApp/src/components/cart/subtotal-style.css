@@ -1,0 +1,31 @@
+﻿.subtotal_column {
+    width: 300px;
+    padding: 2px 2px 2px 2px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: lightgray;
+    text-align: center;
+    align-items: center
+}
+
+.purchase_protect {
+    width: 260px;
+    margin-bottom: 5px;
+}
+
+
+.btn_CheckOut {
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    font-size: medium;
+    font-weight: 500;
+    background: #ffc100;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 8px 8px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}

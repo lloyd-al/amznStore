@@ -1,21 +1,16 @@
 ﻿import React from 'react';
 import { useLocation } from "react-router-dom";
 
-import CategoryProducts from '../../components/catalog/category-products';
-
-import './product-page-style.css';
+import ProductDescription from '../../components/catalog/product-description';
 
 const ProductPage = () => {
     let location = useLocation();
-    console.log("Location");
-    console.log(location);
 
     return (
         <div>
-            <CategoryProducts categoryId={location.state.id} categoryName={location.state.categoryName} />
+            <ProductDescription product={location.state.product} />
         </div>
     );
 };
-
 
 export default ProductPage;

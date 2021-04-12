@@ -1,0 +1,23 @@
+﻿.cartMain {
+    background-color: lightgray;
+}
+
+.cart-item {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.cart-item-align {
+    margin: auto;
+    width: 98%;
+    padding: 5px;
+}
+
+.cartLabel {
+    text-align: left;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    color: grey;
+}
+

@@ -4,8 +4,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ReactFlagsSelect from 'react-flags-select';
 
+import CartIcon from '../cart/cart-icon';
 import logo from '../../assets/amzn_logo.png';
-import cart from '../../assets/cart.png';
 import './NavMenu-style.css';
 
 function NavMenu() {
@@ -110,11 +110,8 @@ function NavMenu() {
                 </Link>
             </div>
             <div className="header__nav-option1">
-                <Link to="/checkout" className="header__link">
-                    <div className="header__optionBasket">
-                        <span className="header__basketCount">0</span>
-                        <img className="header__cart" src={cart} alt="Shopping Cart" />
-                    </div>
+                <Link to="/cart">
+                    <CartIcon />
                 </Link>
             </div>
         </nav>

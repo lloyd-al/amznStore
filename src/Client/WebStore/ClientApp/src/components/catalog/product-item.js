@@ -1,6 +1,5 @@
 ﻿import React from 'react';
-import { connect } from 'react-redux';
-import { withRouter, useHistory, Link } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
 
@@ -44,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductItem = ({ product }) => {
+    const { id, productName, currentPrice, originalPrice, imageUrl } = product;
     const classes = useStyles();
     let history = useHistory();
 
@@ -55,12 +55,10 @@ const ProductItem = ({ product }) => {
         }
     } 
 
-    const { id, productName, currentPrice, originalPrice, imageUrl } = product;
-
     return (
          <Paper className={classes.paper} square={true}>
             <div>
-                <div to={`/product/${productName}`} onClick={() => history.push({ pathname: `/shop/${productName}`, state: { id, productName } })}>
+                <div to={`/product/${id}`} onClick={() => history.push({ pathname: `/product/${id}`, state: { product } })}>
                     <img src={imageUrl} alt={productName.toUpperCase()} className={classes.image}  />
                 </div>
             </div>

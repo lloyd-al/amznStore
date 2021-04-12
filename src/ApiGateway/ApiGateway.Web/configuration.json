@@ -11,10 +11,10 @@
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Category",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Category/{id}",
+      "DownstreamPathTemplate": "/api/v1/Category/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -22,20 +22,8 @@
           "Port": "44353"
         }
       ],
-      "UpstreamPathTemplate": "/webgateway/Category/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/Category/GetCategoriesByName​/{name}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44353"
-        }
-      ],
-      "UpstreamPathTemplate": "/webgateway/Category/GetCategoriesByName​/{name}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/webgateway/Category/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/v1/Product",
@@ -47,11 +35,10 @@
         }
       ],
       "UpstreamPathTemplate": "/webgateway/Product",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      "SwaggerKey": "Catalog"
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Product/{id}",
+      "DownstreamPathTemplate": "/api/v1/Product/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -59,230 +46,8 @@
           "Port": "44353"
         }
       ],
-      "UpstreamPathTemplate": "/webgateway/Product/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ],
-      "SwaggerKey": "Catalog"
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/Product/GetProductsByName​/{name}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44353"
-        }
-      ],
-      "UpstreamPathTemplate": "/webgateway/Product/GetProductsByName​/{name}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "Catalog"
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/Product/GetProductsByCategory/{category}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44353"
-        }
-      ],
-      "UpstreamPathTemplate": "/webgateway/Product/GetProductsByCategory/{category}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "Catalog"
-    },
-    //Basket API
-    {
-      "DownstreamPathTemplate": "/api/v1/Basket",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44303"
-        }
-      ],
-      "UpstreamPathTemplate": "/Basket",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/Basket/{userName}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44303"
-        }
-      ],
-      "UpstreamPathTemplate": "/Basket/{userName}",
-      "UpstreamHttpMethod": [ "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/Basket/Checkout",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44303"
-        }
-      ],
-      "UpstreamPathTemplate": "/Basket/Checkout",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    //Order API
-    {
-      "DownstreamPathTemplate": "/api/v1/Order",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44304"
-        }
-      ],
-      "UpstreamPathTemplate": "/Order",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    //user Authentication API
-    {
-      "DownstreamPathTemplate": "/api/v1/User",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/authenticate",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/authenticate",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/register",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/register",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/verify-email",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/verify-email",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/addrole",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/addrole",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/refresh-token",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/refresh-token",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/revoke-token",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/revoke-token",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/validate-reset-token",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/validate-reset-token",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/forgot-password",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/forgot-password",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/reset-password",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/reset-password",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/User/change-password",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "44202"
-        }
-      ],
-      "UpstreamPathTemplate": "/User/change-password",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamPathTemplate": "/webgateway/Product/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
     }
   ],
 
@@ -297,8 +62,5 @@
         }
       ]
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost"
-  }
+  ]
 }

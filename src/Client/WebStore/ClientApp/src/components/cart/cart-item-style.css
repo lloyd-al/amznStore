@@ -1,0 +1,59 @@
+﻿.cart-item {
+    margin-bottom: 15px;
+}
+
+.itemImg {
+    height: 200px;
+    width: 160px;
+    display: block;
+    margin-left: auto;
+    margin-right: 5px;
+    width: 80%;
+}
+
+.itemName {
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size:larger;
+    color: darkblue;
+}
+
+.itemSubName {
+    font-size:smaller;
+    margin-bottom:10px;
+}
+    .itemSubName img {
+        width: 60px;
+        height: 16px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+.itemValue {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: small;
+}
+
+.itemTotalValue {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: medium;
+    font-weight:bold;
+}
+
+.quantity {
+
+    display: inline-block;
+}
+
+    .quantity .arrow {
+        cursor: pointer;
+    }
+
+    .quantity .value {
+        margin: 0 10px;
+    }
+
+.remove-button {
+    text-align: left;
+    padding:8px;
+}

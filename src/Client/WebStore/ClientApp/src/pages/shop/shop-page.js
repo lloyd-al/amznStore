@@ -2,12 +2,12 @@
 import { Route } from 'react-router-dom';
 
 import ProductList from '../../components/catalog/product-list';
-import ProductPage from '../product/product-page';
+import CategoryProductsPage from '../product/category-products-page';
 
 const ShopPage = ({ match }) => (
     <div>
         <Route exact path={`${match.path}`} component={ProductList} />
-        <Route path={`${match.path}/:categoryName`} component={ProductPage} />
+        <Route path={`${match.path}/:categoryName`} component={CategoryProductsPage} />
     </div>
 );
 
