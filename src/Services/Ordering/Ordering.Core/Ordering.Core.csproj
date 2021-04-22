@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>amznStore.Services.Ordering.Core</AssemblyName>
+    <RootNamespace>amznStore.Services.Ordering.Core</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Linq;
 using System.Net.Mime;
@@ -47,6 +48,16 @@ namespace Catalog.Api
                 AddNewtonsoftJson(options => 
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            //services.AddAuthentication("Bearer")
+            //        .AddJwtBearer("Bearer", options =>
+            //        {
+            //            options.Authority = "https://localhost:5005";
+            //            options.TokenValidationParameters = new TokenValidationParameters
+            //            {
+            //                ValidateAudience = false
+            //            };
+            //        });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +75,7 @@ namespace Catalog.Api
 
             app.UseCors("CorsPolicy");
 
+            //app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

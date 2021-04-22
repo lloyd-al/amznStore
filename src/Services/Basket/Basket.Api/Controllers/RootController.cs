@@ -2,7 +2,7 @@
 using Serilog;
 using System;
 
-namespace amznStore.Services.Catalog.Api.Controllers
+namespace amznStore.Services.Basket.Api.Controllers
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]

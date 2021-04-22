@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "amznStore.Services.Discount.Grpc.Protos";
+
+import "google/protobuf/timestamp.proto";
+
+service DiscountProtoService {
+    rpc GetDiscount (GetDiscountRequest) returns (CouponModel);
+    rpc CreateDiscount (CreateDiscountRequest) returns (CouponModel);
+    rpc UpdateDiscount (UpdateDiscountRequest) returns (CouponModel);
+    rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
+}
+
+message CouponModel {
+    int32 Id = 1;
+    string CategoryName = 2;
+    int32 Discount = 3;
+    google.protobuf.Timestamp ValidTill = 4;
+}
+
+message GetDiscountRequest {
+  string categoryName = 1;
+}
+
+message CreateDiscountRequest {
+  CouponModel coupon = 1;
+}
+
+message UpdateDiscountRequest {
+  CouponModel coupon = 1;
+}
+
+message DeleteDiscountRequest {
+  string categoryName = 1;
+}
+
+message DeleteDiscountResponse {
+  bool success = 1;
+}
