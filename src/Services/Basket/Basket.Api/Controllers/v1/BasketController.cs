@@ -6,6 +6,9 @@ using Serilog;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using MassTransit;
+using amznStore.Common.EventBus.Messages.Events;
+using AutoMapper;
 
 namespace amznStore.Services.Basket.Api.Controllers.v1
 {
@@ -14,11 +17,15 @@ namespace amznStore.Services.Basket.Api.Controllers.v1
     {
         private readonly IBasketRepository _repository;
         private readonly DiscountGrpcService _discountGrpcService;
+        private readonly IPublishEndpoint _publishEndpoint;
+        private readonly IMapper _mapper;
 
-        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService, ILogger logger) : base(logger)
+        public BasketController(IBasketRepository repository, DiscountGrpcService discountGrpcService, ILogger logger, IPublishEndpoint publishEndpoint, IMapper mapper) : base(logger)
         {
             _discountGrpcService = discountGrpcService ?? throw new ArgumentNullException(nameof(discountGrpcService));
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _publishEndpoint = publishEndpoint ?? throw new ArgumentNullException(nameof(publishEndpoint));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         [HttpGet]
@@ -58,9 +65,6 @@ namespace amznStore.Services.Basket.Api.Controllers.v1
         public async Task<ActionResult> Checkout([FromBody] BasketCheckout basketCheckout)
         {
             // get total price of the basket
-            // remove the basket 
-            // send checkout event to rabbitMq 
-
             var basket = await _repository.GetBasketAsync(basketCheckout.Buyer);
             if (basket == null)
             {
@@ -68,6 +72,12 @@ namespace amznStore.Services.Basket.Api.Controllers.v1
                 return BadRequest();
             }
 
+            // send checkout event to rabbitmq
+            var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
+            eventMessage.TotalPrice = basket.TotalPrice;
+            await _publishEndpoint.Publish<BasketCheckoutEvent>(eventMessage);
+
+            // remove the basket 
             await _repository.DeleteBasketAsync(basketCheckout.Buyer);
             
             return Accepted();

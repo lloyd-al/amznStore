@@ -2,24 +2,16 @@ using amznStore.Basket.Api.Extensions;
 using amznStore.Common.Infrastructure.Extensions;
 using amznStore.Services.Basket.Api.GrpcServices;
 using amznStore.Services.Basket.Core.Interfaces;
-using amznStore.Services.Basket.Infrastructure;
 using amznStore.Services.Basket.Infrastructure.Repositories;
 using amznStore.Services.Discount.Grpc.Protos;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace amznStore.Services.Basket.Api
 {
@@ -48,6 +40,16 @@ namespace amznStore.Services.Basket.Api
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
                         (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
             services.AddScoped<DiscountGrpcService>();
+
+            // MassTransit-RabbitMQ Configuration
+            services.AddMassTransit(config => {
+                config.UsingRabbitMq((ctx, cfg) => {
+                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
+                    cfg.UseHealthCheck(ctx);
+                });
+            });
+            services.AddMassTransitHostedService();
+
             services.AddControllers();
         }
 

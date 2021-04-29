@@ -1,5 +1,6 @@
 ﻿using amznStore.Services.Ordering.Application.Exceptions;
 using amznStore.Services.Ordering.Application.Responses;
+using amznStore.Services.Ordering.Application.Services.Commands;
 using amznStore.Services.Ordering.Core.Interfaces;
 using AutoMapper;
 using MediatR;
@@ -8,7 +9,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace amznStore.Services.Ordering.Application.Services.Commands.UpdateOrder
+namespace amznStore.Services.Ordering.Application.Services.Handlers
 {
     public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
     {

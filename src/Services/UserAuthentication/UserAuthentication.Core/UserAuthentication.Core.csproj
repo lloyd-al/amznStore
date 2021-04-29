@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>amznStore.Services.UserAuthentication.Core</AssemblyName>
+    <RootNamespace>amznStore.Services.UserAuthentication.Core</RootNamespace>
+  </PropertyGroup>
+
+</Project>

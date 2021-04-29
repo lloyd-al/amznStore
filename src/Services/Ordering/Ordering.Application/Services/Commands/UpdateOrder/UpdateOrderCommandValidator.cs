@@ -1,7 +1,7 @@
-﻿using amznStore.Services.Ordering.Application.Commands;
+﻿using amznStore.Services.Ordering.Application.Services.Commands;
 using FluentValidation;
 
-namespace amznStore.Services.Ordering.Application.Services.Commands.UpdateOrder
+namespace amznStore.Services.Ordering.Application.Services.Validators
 {
     public class UpdateOrderCommandValidator : AbstractValidator<UpdateOrderCommand>
     {

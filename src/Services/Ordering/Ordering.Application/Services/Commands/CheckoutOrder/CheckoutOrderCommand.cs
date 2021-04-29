@@ -1,7 +1,6 @@
-﻿using amznStore.Services.Ordering.Application.Responses;
-using MediatR;
+﻿using MediatR;
 
-namespace amznStore.Services.Ordering.Application.Commands
+namespace amznStore.Services.Ordering.Application.Services.Commands
 {
     public class CheckoutOrderCommand : IRequest<int>
     {

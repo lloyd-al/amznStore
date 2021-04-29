@@ -1,11 +1,10 @@
-﻿using MediatR;
+﻿using System;
 
-namespace amznStore.Services.Ordering.Application.Services.Commands
+namespace amznStore.Common.EventBus.Messages.Events
 {
-    public class UpdateOrderCommand : IRequest
+    public class BasketCheckoutEvent : IntegrationBaseEvent
     {
-        public int Id { get; set; }
-        public string BuyerId { get; set; }
+        public string Buyer { get; set; }
         public decimal TotalPrice { get; set; }
 
         // BillingAddress

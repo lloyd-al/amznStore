@@ -94,12 +94,130 @@ Use [MongoDB Cloud](https://www.mongodb.com/cloud) to create Catalog Database
 
 > Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
+> Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+
 ### Services -> Catalog -> Catalog.Test
 > Install-Package FluentAssertions
 
 > Install-Package Microsoft.AspNetCore.Mvc.Testing
 
 > Install-Package RESTFulSense
+
+### Services -> Catalog -> Catalog.Test
+> Install-Package FluentAssertions
+
+> Install-Package Microsoft.AspNetCore.Mvc.Testing
+
+> Install-Package RESTFulSense
+
+### Services -> Basket -> Basket.Core
+> Install-Package StackExchange.Redis
+
+### Services -> Basket -> Basket.Infrastructure
+> Install-Package Microsoft.EntityFrameworkCore
+
+> Install-Package Microsoft.Extensions.Configuration
+
+> Install-Package Newtonsoft.Json
+
+> Install-Package StackExchange.Redis
+
+### Services -> Basket -> Basket.Application
+> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+### Services -> Basket -> Basket.API
+> Install-Package Microsoft.Extensions.Caching.StackExchangeRedis
+
+> Install-Package Serilog
+
+> Install-Package Serilog.Extensions.Logging
+
+> Install-Package Serilog.Extensions.Hosting
+
+> Install-Package Serilog.Settings.Configuration
+
+> Install-Package Newtonsoft.Json
+
+> Install-Package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+> Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+
+> Install-Package Microsoft.AspNetCore.Mvc.Versioning
+
+> Install-Package AutoMapper
+
+> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+> Install-Package Microsoft.AspNetCore.Authentication.OpenIdConnect
+
+### Services -> Discount -> Discount.Core
+> Install-Package Microsoft.Extensions.Configuration
+
+> Install-Package Npgsql
+
+> Install-Package Dapper
+
+### Services -> Discount -> Discount.Api
+> Install-Package Microsoft.AspNetCore.Mvc.Versioning
+
+> Install-Package Serilog
+
+> Install-Package Serilog.Extensions.Logging
+
+> Install-Package Serilog.Extensions.Hosting
+
+> Install-Package Serilog.Settings.Configuration
+
+> Install-Package Newtonsoft.Json
+
+> Install-Package Npgsql
+
+> Install-Package Dapper
+
+### Services -> Discount -> Discount.Grpc
+> Install-Package Serilog
+
+> Install-Package Newtonsoft.Json
+
+> Install-Package Npgsql
+
+> Install-Package Dapper
+
+> Install-Package Polly
+
+> Install-Package AutoMapper
+
+> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+> Install-Package Grpc.AspNetCore
+
+### Services -> Ordering -> Ordering.Infrastructure
+> Install-Package Microsoft.EntityFrameworkCore
+
+> Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+> Install-Package Microsoft.EntityFrameworkCore.Tools
+
+> Install-Package Microsoft.Extensions.Configuration
+
+> Install-Package Microsoft.Extensions.Options
+
+> Install-Package Newtonsoft.Json
+
+### Services -> Ordering -> Ordering.Application
+> Install-Package AutoMapper
+
+> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+> Install-Package FluentValidation
+
+> Install-Package FluentValidation.DependencyInjectionExtensions
+
+> Install-Package MediatR
+
+> Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+
+> Install-Package Microsoft.Extensions.Options
 
 ## Client -> WebStore
 > npm install @material-ui/core --save

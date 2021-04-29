@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using amznStore.Services.Ordering.Application.Commands;
 using amznStore.Services.Ordering.Application.Mapper;
+using amznStore.Services.Ordering.Application.Services.Commands;
 using amznStore.Services.Ordering.Core.Entities;
 using amznStore.Services.Ordering.Core.Interfaces;
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace amznStore.Services.Ordering.Application.Handlers
+namespace amznStore.Services.Ordering.Application.Services.Handlers
 {
     public class CheckoutOrderCommandHandler : IRequestHandler<CheckoutOrderCommand, int>
     {

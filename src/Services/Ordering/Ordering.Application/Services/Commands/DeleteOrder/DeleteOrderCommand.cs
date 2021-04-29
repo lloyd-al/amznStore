@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace amznStore.Services.Ordering.Application.Services.Commands.DeleteOrder
+namespace amznStore.Services.Ordering.Application.Services.Commands
 {
     public class DeleteOrderCommand : IRequest
     {
