@@ -14,7 +14,7 @@ const CartItem = ({ item, clearItem, addItem, removeItem }) => {
         <div className='cart-item'>
             <Grid item xs={12} container>
                 <Grid item xs={3}>
-                    <div><img className="itemImg" src={item.product.imageUrl} alt='item' /></div>
+                    <div><img className="itemImg" src={item.product.imageUrl} alt={item.product.productName} /></div>
                 </Grid>
                 <Grid item xs={5}>
                     <div className="itemValue">
@@ -22,7 +22,7 @@ const CartItem = ({ item, clearItem, addItem, removeItem }) => {
                         <div className="itemSubName">
                             <div>In Stock</div>
                             <div>Eligible for FREE Shipping</div>
-                            <div><img src={ImgAmznFullfilled} /></div>
+                            <div><img src={ImgAmznFullfilled} alt="Amazon Fullfilled" /></div>
                             <div className="subtotal__gift"><input type="checkbox" />This will be a gift</div>
                         </div>
                     </div>

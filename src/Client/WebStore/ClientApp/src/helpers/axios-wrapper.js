@@ -92,7 +92,7 @@ axios.interceptors.response.use(
         }
 
         // Logout user if token refresh didn't work or user is disabled
-        if (error.config.url == '/refresh-token' || error.response.message == 'Account is disabled.') {
+        if (error.config.url === '/refresh-token' || error.response.message === 'Account is disabled.') {
 
             //TokenStorage.clear();
 

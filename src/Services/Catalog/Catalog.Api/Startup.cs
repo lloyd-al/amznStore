@@ -3,6 +3,7 @@ using amznStore.Services.Catalog.Api.Extensions;
 using amznStore.Services.Catalog.Application;
 using amznStore.Services.Catalog.Infrastructure;
 using amznStore.Services.Catalog.Infrastructure.Settings;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -82,7 +83,7 @@ namespace Catalog.Api
             {
                 endpoints.MapControllers();
 
-                endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions
+                endpoints.MapHealthChecks("/api/health/ready", new HealthCheckOptions
                 {
                     Predicate = (check) => check.Tags.Contains("ready"),
                     ResponseWriter = async (context, report) =>
@@ -104,11 +105,13 @@ namespace Catalog.Api
                     }
                 });
 
-                endpoints.MapHealthChecks("/health/live", new HealthCheckOptions
-                {
-                    Predicate = (_) => false
-                });
-
+                endpoints.MapHealthChecks("/api/health/live", 
+                    new HealthCheckOptions
+                    {
+                        Predicate = (_) => false,
+                        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                    }
+                );
             });
         }
     }

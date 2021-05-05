@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ReactFlagsSelect from 'react-flags-select';
+import { AuthenticationService } from '../../services/auth-service';
 
 import CartIcon from '../cart/cart-icon';
 import logo from '../../assets/amzn_logo.png';
@@ -11,11 +12,15 @@ import './NavMenu-style.css';
 function NavMenu() {
     const [selected, setSelected] = useState('IN');
     const [user, setUser] = useState();
+    const [fullName, setFullName] = useState();
     let history = useHistory();
 
     useEffect(() => {
-        setUser('');
-    }, [user]);
+        setUser(AuthenticationService.userValue);
+        if (user) {
+            setFullName(`${user.firstName} ${user.lastName}`);
+        }
+    }, [user, fullName]);
 
     function ShowUserProfile() {
         history.push("/");

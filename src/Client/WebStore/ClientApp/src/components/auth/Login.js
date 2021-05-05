@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react'
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../services/auth-service';
 
 import "./Login.css"
 
-function Login(history, location) {
+function Login({ history, location }) {
     // Declare a new state variable, which we'll call "count"
     const [errCount, setErrCount] = useState(0);
 
@@ -62,13 +62,13 @@ function Login(history, location) {
                         )}
                     <div className="login__container">
                         <h3>Sign-In</h3>
-                        <Form>
+                            <Form className="form-signin">
                             <div className="login__label">Email</div>
-                            <Field name="email" type="text" className={'login__input' + (errors.email && touched.email ? ' is-invalid' : '')} placeholder="" />
+                                <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} placeholder="" />
                             <ErrorMessage name="email" component="div" className="invalid-feedback" />
 
                             <div className="login__label">Password</div>
-                            <Field name="password" type="password" className={'login__input' + (errors.email && touched.email ? ' is-invalid' : '')} placeholder="" />
+                                <Field name="password" type="password" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} placeholder="" />
                             <ErrorMessage name="password" component="div" className="invalid-feedback" />
                             <button type="submit" disabled={isSubmitting} className="login__signInBtn">
                                 {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
