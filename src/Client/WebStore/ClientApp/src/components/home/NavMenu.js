@@ -1,32 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import SearchIcon from "@material-ui/icons/Search";
 import ReactFlagsSelect from 'react-flags-select';
-import { AuthenticationService } from '../../services/auth-service';
 
+import UserMenu from './user-menu';
 import CartIcon from '../cart/cart-icon';
 import logo from '../../assets/amzn_logo.png';
 import './NavMenu-style.css';
 
 function NavMenu() {
     const [selected, setSelected] = useState('IN');
-    const [user, setUser] = useState();
-    const [fullName, setFullName] = useState();
-    let history = useHistory();
-
-    useEffect(() => {
-        setUser(AuthenticationService.userValue);
-        if (user) {
-            setFullName(`${user.firstName} ${user.lastName}`);
-        }
-    }, [user, fullName]);
-
-    function ShowUserProfile() {
-        history.push("/");
-    }
 
     return (
+        <>
         <nav className="header">
             <div className="header__left-pane">
                 <Link to="/">
@@ -98,14 +85,8 @@ function NavMenu() {
                 />
             </div>
 
-            <div className="header__nav-option2">
-                <Link to="/login" onClick={ShowUserProfile} className="header__link">
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.firstName}</span>
-                        <span className="header__optionLineTwo">Account & Lists</span>
-                    </div>
-                </Link>
-            </div>
+            <UserMenu />
+
             <div className="header__nav-option3">
                 <Link to="/order" className="header__link">
                     <div className="header__option">
@@ -119,7 +100,8 @@ function NavMenu() {
                     <CartIcon />
                 </Link>
             </div>
-        </nav>
+            </nav>
+        </>
     );
 }
 

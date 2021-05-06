@@ -27,7 +27,6 @@ function login(email, password) {
         .then((response) => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             // publish user to subscribers and start timer to refresh token
-            localStorage.setItem('currentUser', JSON.stringify(response.data));
             currentUserSubject.next(response.data);
             startRefreshTokenTimer();
             return response.data;
@@ -40,6 +39,7 @@ function logout() {
     stopRefreshTokenTimer();
     localStorage.removeItem('currentUser');
     currentUserSubject.next(null);
+    console.log("Logout Current User" + AuthenticationService.currentUser);
 }
 
 function refreshToken() {

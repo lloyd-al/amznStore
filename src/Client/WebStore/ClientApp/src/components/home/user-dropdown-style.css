@@ -1,0 +1,82 @@
+﻿.user-dropdown {
+    position: absolute;
+    display: flex;
+    background-color: white;
+    top: 80px;
+    right: 180px;
+    z-index: 999;
+    border-radius: 4px;
+}
+
+
+    .user-dropdown::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid white;
+        top: -8px;
+        left: 80%;
+    }
+
+.linklist-style {
+    list-style-type: none;
+    text-align: left;
+    padding: 10px 4px 0px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: small;
+}
+
+    .linklist-style .title {
+        font-weight: bold;
+        padding-bottom: 2px;
+    }
+
+    .linklist-style .text {
+        font-size: smaller;
+        padding-bottom: 2px;
+    }
+
+        .linklist-style .text a {
+            color: black;
+        }
+
+.menu-divider {
+    flex: 1;
+    border-right: 1px solid grey;
+    height: 260px;
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+    margin: auto;
+}
+
+.login-section {
+    flex: 1;
+    border-right: 1px solid grey;
+    width: 160px;
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+    margin: auto;
+}
+
+.login__signInBtn {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    background: #ffc100;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px 3px 3px 3px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.newcustomer-section {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 11px;
+}

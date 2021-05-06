@@ -23,14 +23,11 @@ export default class App extends Component {
         AuthenticationService.currentUser.subscribe(x => this.setState({ currentUser: x }));
     }
 
-    logout() {
-        AuthenticationService.logout();
-    }
-
   render () {
     return (
       <Layout>
             <Route exact path='/' component={HomePage} />
+            <Route path='/home' component={HomePage} />
             <Route path='/shop' component={ShopPage} />
             <Route path='/product' component={ProductPage} />
             <Route path='/cart' component={CartPage} />

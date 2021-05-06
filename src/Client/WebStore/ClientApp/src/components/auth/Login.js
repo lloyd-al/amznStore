@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -9,9 +9,10 @@ import { AuthenticationService } from '../../services/auth-service';
 
 import "./Login.css"
 
-function Login({ history, location }) {
+function Login({ location }) {
     // Declare a new state variable, which we'll call "count"
     const [errCount, setErrCount] = useState(0);
+    const history = useHistory();
 
     const initialValues = {
         email: '',
@@ -33,7 +34,7 @@ function Login({ history, location }) {
         AuthenticationService.login(email, password)
             .then(() => {
                 setErrCount(0);
-                const { from } = location.state || { from: { pathname: "/" } };
+                const { from } = location.state || { from: { pathname: "/home" } };
                 history.push(from);
             })
             .catch(error => {
