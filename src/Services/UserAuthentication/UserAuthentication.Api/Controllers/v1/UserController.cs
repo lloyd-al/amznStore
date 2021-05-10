@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using AutoMapper;
-using amznStore.Common.Core.Entities;
+﻿using amznStore.Common.Core.Entities;
 using amznStore.Common.Core.Interfaces;
 using amznStore.Services.UserAuthentication.Core.Entities;
 using amznStore.Services.UserAuthentication.Core.Interfaces;
 using amznStore.Services.UserAuthentication.Core.Models;
 using amznStore.Services.UserAuthentication.Infrastructure.Settings;
+using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Serilog;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace amznStore.Services.UserAuthentication.Api.Controllers.v1
 {
@@ -55,10 +54,10 @@ namespace amznStore.Services.UserAuthentication.Api.Controllers.v1
             return Ok(new { message = response.Message });
         }
 
-        [HttpGet("verify-email")]
-        public async Task<IActionResult> VerifyEmail(string email, string token)
+        [HttpPost("verify-email")]
+        public async Task<IActionResult> VerifyEmail(VerifyEmailRequest verifyEmail)
         {
-            await _userRepository.VerifyEmail(email, token);
+            await _userRepository.VerifyEmail(verifyEmail);
             return Ok(new { message = "Verification successful, you can now login" });
         }
 
@@ -200,7 +199,7 @@ namespace amznStore.Services.UserAuthentication.Api.Controllers.v1
         private async Task sendVerificationEmail(RegisterResponse requestResponse)
         {
             var origin = Request.Headers["origin"];
-            var verifyUrl = $"{origin}/user/verify-email?email={requestResponse.Email}&token={requestResponse.Token}";
+            var verifyUrl = $"{origin}/auth/verify-email?email={requestResponse.Email}&token={requestResponse.Token}";
 
             string templatePath = Directory.GetCurrentDirectory() + "\\Templates\\WelcomeTemplate.html";
             StreamReader str = new StreamReader(templatePath);
@@ -234,7 +233,7 @@ namespace amznStore.Services.UserAuthentication.Api.Controllers.v1
             string message;
             if (!string.IsNullOrEmpty(origin))
             {
-                var resetUrl = $"{origin}/user/reset-password?token={token}";
+                var resetUrl = $"{origin}/auth/reset-password?token={token}";
                 message = $@"<p>Please click the below link to reset your password, the link will be valid for 1 day:</p>
                              <p><a href=""{resetUrl}"">{resetUrl}</a></p>";
             }

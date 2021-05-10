@@ -33,11 +33,13 @@
     .linklist-style .title {
         font-weight: bold;
         padding-bottom: 2px;
+        color: black;
     }
 
     .linklist-style .text {
         font-size: smaller;
         padding-bottom: 2px;
+        color:black;
     }
 
         .linklist-style .text a {
@@ -79,4 +81,5 @@
 .newcustomer-section {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
     font-size: 11px;
+    color:black;
 }

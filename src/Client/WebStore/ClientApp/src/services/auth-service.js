@@ -39,7 +39,6 @@ function logout() {
     stopRefreshTokenTimer();
     localStorage.removeItem('currentUser');
     currentUserSubject.next(null);
-    console.log("Logout Current User" + AuthenticationService.currentUser);
 }
 
 function refreshToken() {
@@ -56,8 +55,8 @@ function register(params) {
     return AxiosWrapper.post(`${baseAuthUrl}/register`, params);
 }
 
-function verifyEmail(token) {
-    return AxiosWrapper.post(`${baseAuthUrl}/verify-email`, { token });
+function verifyEmail(email, token) {
+    return AxiosWrapper.post(`${baseAuthUrl}/verify-email`, { email, token });
 }
 
 function forgotPassword(email) {

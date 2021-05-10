@@ -7,7 +7,7 @@ namespace amznStore.Services.UserAuthentication.Core.Interfaces
     public interface IUserRepository
     {
         Task<RegisterResponse> Register(RegisterRequest registerUser);
-        Task<bool> VerifyEmail(string email, string token);
+        Task<bool> VerifyEmail(VerifyEmailRequest verifyEmail);
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest authenticateRequest, string ipAddress);
         Task<string> AddRoleAsync(AddRole addRole);
         Task<AuthenticateResponse> RefreshToken(string token, string ipAddress);

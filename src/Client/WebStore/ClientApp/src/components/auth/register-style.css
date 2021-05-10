@@ -1,0 +1,177 @@
+﻿.login {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__container {
+    width: 340px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+    .login__container > h3 {
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+.login__label {
+    font-size: small;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.login__input {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.login__logo {
+    width: 100px;
+    object-fit: contain;
+    margin: 20px 0px;
+}
+
+.login__signInBtn {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    background: #ffc100;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px 3px 3px 3px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.login__legalstmt {
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.newact__label {
+    width: 340px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 30px 0 20px;
+    font-size: small;
+    border-color: gray;
+}
+
+    .newact__label span {
+        background: #fff;
+        padding: 0 10px;
+        color: gray;
+    }
+
+.login__registerBtn {
+    width: 340px;
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    background: lightgrey;
+    border: 1px solid;
+    margin-top: 10px;
+    border-radius: 3px 3px 3px 3px;
+    border-color: darkgrey;
+    color: #111;
+}
+.login {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__container {
+    width: 340px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+
+    .login__container > h3 {
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+.login__label {
+    font-size: small;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.login__input {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.login__logo {
+    width: 100px;
+    object-fit: contain;
+    margin: 20px 0px;
+}
+
+.login__signInBtn {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    background: #ffc100;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px 3px 3px 3px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.login__legalstmt {
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.newact__label {
+    width: 340px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 30px 0 20px;
+    font-size: small;
+    border-color: gray;
+}
+
+    .newact__label span {
+        background: #fff;
+        padding: 0 10px;
+        color: gray;
+    }
+
+.login__registerBtn {
+    width: 340px;
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    background: lightgrey;
+    border: 1px solid;
+    margin-top: 10px;
+    border-radius: 3px 3px 3px 3px;
+    border-color: darkgrey;
+    color: #111;
+}
+

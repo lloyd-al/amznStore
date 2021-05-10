@@ -79,13 +79,13 @@ namespace amznStore.Services.UserAuthentication.Infrastructure.Repositories
             return response;
         }
 
-        public async Task<bool> VerifyEmail(string email, string token)
+        public async Task<bool> VerifyEmail(VerifyEmailRequest verifyEmail)
         {
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailAsync(verifyEmail.Email);
             
             if (user == null) return false;
 
-            var result = await _userManager.ConfirmEmailAsync(user, token);
+            var result = await _userManager.ConfirmEmailAsync(user, verifyEmail.Token);
             return result.Succeeded;
         }
 

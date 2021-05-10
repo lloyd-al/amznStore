@@ -7,7 +7,7 @@ import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined'
 
 import { AuthenticationService } from '../../services/auth-service';
 
-import "./Login.css"
+import "./auth-style.css"
 
 function Login({ location }) {
     // Declare a new state variable, which we'll call "count"

@@ -65,11 +65,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "src\Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserAuthentication", "UserAuthentication", "{5AFE98AA-638D-46C4-AD4A-DAAD91561E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Core", "src\Services\UserAuthentication\UserAuthentication.Core\UserAuthentication.Core.csproj", "{900F7DBF-A55C-45C4-B8D8-29C6B4B82301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Core", "src\Services\UserAuthentication\UserAuthentication.Core\UserAuthentication.Core.csproj", "{900F7DBF-A55C-45C4-B8D8-29C6B4B82301}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Infrastructure", "src\services\UserAuthentication\UserAuthentication.Infrastructure\UserAuthentication.Infrastructure.csproj", "{A94AD1EA-9F35-4E30-8D74-B430601EFFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Infrastructure", "src\services\UserAuthentication\UserAuthentication.Infrastructure\UserAuthentication.Infrastructure.csproj", "{A94AD1EA-9F35-4E30-8D74-B430601EFFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Api", "src\services\UserAuthentication\UserAuthentication.Api\UserAuthentication.Api.csproj", "{F28E60B2-3CDD-49DE-9221-D1E5381212E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Api", "src\services\UserAuthentication\UserAuthentication.Api\UserAuthentication.Api.csproj", "{F28E60B2-3CDD-49DE-9221-D1E5381212E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

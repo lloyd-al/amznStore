@@ -41,7 +41,7 @@ const UserMenu = () => {
 
     useEffect(() => {
         setUser(AuthenticationService.userValue);
-    });
+    }, []);
 
     return (
         <>
