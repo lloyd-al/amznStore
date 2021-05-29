@@ -43,8 +43,9 @@ namespace amznStore.Services.Basket.Api.Controllers.v1
             // Communicate with Discount. Grpc and calculate lastest prices of products into shopping cart
             foreach (var item in basket.Items)
             {
-                var coupon = await _discountGrpcService.GetDiscount(item.CategoryName);
-                item.UnitPrice -= (item.UnitPrice * (coupon.Discount / 100));
+                var coupon = await _discountGrpcService.GetDiscount(Convert.ToInt32(item.Id));
+                var discount = Decimal.Divide(Convert.ToDecimal(coupon.DiscountPercentage), 100);
+                item.UnitPrice -= item.UnitPrice * discount;
             }
 
             return Ok(await _repository.UpdateBasketAsync(basket));

@@ -15,9 +15,9 @@ namespace amznStore.Services.Basket.Api.GrpcServices
             _discountProtoService = discountProtoService ?? throw new ArgumentNullException(nameof(discountProtoService));
         }
 
-        public async Task<CouponModel> GetDiscount(string categoryName)
+        public async Task<CouponModel> GetDiscount(int id)
         {
-            var discountRequest = new GetDiscountRequest { CategoryName = categoryName };
+            var discountRequest = new GetDiscountRequest { Id = id };
 
             return await _discountProtoService.GetDiscountAsync(discountRequest);
         }

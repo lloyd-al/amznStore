@@ -18,10 +18,9 @@ namespace amznStore.IdentityServer
         {
             services.AddIdentityServer()
                 .AddInMemoryClients(Config.Clients)
-                .AddInMemoryIdentityResources(Config.IdentityResources)
                 .AddInMemoryApiResources(Config.ApiResources)
                 .AddInMemoryApiScopes(Config.ApiScopes)
-                .AddDeveloperSigningCredential();
+                .AddDeveloperSigningCredential(); //This is for dev only scenarios when you don’t have a certificate to use.
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

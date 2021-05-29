@@ -26,15 +26,30 @@ namespace amznStore.Services.Discount.Grpc
 
         public override async Task<CouponModel> GetDiscount(GetDiscountRequest request, ServerCallContext context)
         {
-            var coupon = await _repository.GetDiscount(request.CategoryName);
+            var coupon = await _repository.GetCoupon(request.Id, false);
 
             if (coupon == null)
             {
-                throw new RpcException(new Status(StatusCode.NotFound, $"Discount with Category Name {request.CategoryName} not found"));
+                throw new RpcException(new Status(StatusCode.NotFound, $"Discount with Id {request.Id} not found"));
             }
 
-            _logger.LogInformation("Discount is retrieved for CategoryName : {categoryName}, Discount : {discount}", coupon.CategoryName, coupon.Discount);
+            _logger.LogInformation("Coupon is retrieved for CategoryName : {categoryName}, Discount : {discount}%", coupon.Id, coupon.DiscountPercentage);
 
+            return _mapper.Map<CouponModel>(coupon);
+        }
+
+        public override async Task<CouponModel> VerifyDiscount(VerifyDiscountRequest request, ServerCallContext context)
+        {
+            var coupon = await _repository.VerifyCoupon(request.CouponCode, false);
+
+            if (coupon == null)
+            {
+                throw new RpcException(new Status(StatusCode.NotFound, $"Discount with Coupon  Code {request.CouponCode} is not found or expired"));
+            }
+
+            _logger.LogInformation("Coupon is retrieved for Coupon Code : {couponCode}, Category Name : {categoryName}", coupon.CouponCode, coupon.CategoryName);
+
+            //return Task.FromResult(_mapper.Map<CouponModel>(coupon));
             return _mapper.Map<CouponModel>(coupon);
         }
 
@@ -42,8 +57,9 @@ namespace amznStore.Services.Discount.Grpc
         {
             var coupon = _mapper.Map<Coupon>(request.Coupon);
 
-            await _repository.CreateDiscount(coupon);
-            _logger.LogInformation("Discount is successfully created. CategoryName : {CategoryName}", coupon.CategoryName);
+            _repository.CreateCoupon(coupon);
+            await _repository.SaveChangesAsync();
+            _logger.LogInformation("Coupon is successfully created. CategoryName : {CategoryName}", coupon.CategoryName);
 
             var couponModel = _mapper.Map<CouponModel>(coupon);
             return couponModel;
@@ -53,8 +69,9 @@ namespace amznStore.Services.Discount.Grpc
         {
             var coupon = _mapper.Map<Coupon>(request.Coupon);
 
-            await _repository.UpdateDiscount(coupon);
-            _logger.LogInformation("Discount is successfully updated. CategoryName : {CategoryName}", coupon.CategoryName);
+            _repository.UpdateCoupon(coupon);
+            await _repository.SaveChangesAsync();
+            _logger.LogInformation("Coupon is successfully updated. CategoryName : {CategoryName}", coupon.CategoryName);
 
             var couponModel = _mapper.Map<CouponModel>(coupon);
             return couponModel;
@@ -62,10 +79,14 @@ namespace amznStore.Services.Discount.Grpc
 
         public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
         {
-            var deleted = await _repository.DeleteDiscount(request.CategoryName);
+            
+            var coupon = await _repository.GetCoupon(request.Id, trackChanges: false);
+            _repository.DeleteCoupon(coupon);
+            await _repository.SaveChangesAsync();
+
             var response = new DeleteDiscountResponse
             {
-                Success = deleted
+                Success = true
             };
 
             return response;

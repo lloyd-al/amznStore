@@ -40,5 +40,9 @@
       <Link>Protos\discount.proto</Link>
     </Protobuf>
   </ItemGroup>
-
+	<ItemGroup>
+		<Protobuf Include="..\..\Discount\Discount.Grpc\Protos\customTypes.proto" GrpcServices="Client">
+			<Link>Protos\customTypes.proto</Link>
+		</Protobuf>
+	</ItemGroup>
 </Project>

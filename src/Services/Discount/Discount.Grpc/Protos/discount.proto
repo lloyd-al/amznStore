@@ -3,9 +3,11 @@ syntax = "proto3";
 option csharp_namespace = "amznStore.Services.Discount.Grpc.Protos";
 
 import "google/protobuf/timestamp.proto";
+import "customTypes.proto";
 
 service DiscountProtoService {
     rpc GetDiscount (GetDiscountRequest) returns (CouponModel);
+    rpc VerifyDiscount (VerifyDiscountRequest) returns (CouponModel);
     rpc CreateDiscount (CreateDiscountRequest) returns (CouponModel);
     rpc UpdateDiscount (UpdateDiscountRequest) returns (CouponModel);
     rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
@@ -14,12 +16,17 @@ service DiscountProtoService {
 message CouponModel {
     int32 Id = 1;
     string CategoryName = 2;
-    int32 Discount = 3;
-    google.protobuf.Timestamp ValidTill = 4;
+    string CouponCode = 3;
+    customTypes.DecimalValue DiscountPercentage = 4;
+    google.protobuf.Timestamp ValidTill = 5;
 }
 
 message GetDiscountRequest {
-  string categoryName = 1;
+    int32 Id = 1;
+}
+
+message VerifyDiscountRequest {
+  string couponCode = 1;
 }
 
 message CreateDiscountRequest {
@@ -31,7 +38,7 @@ message UpdateDiscountRequest {
 }
 
 message DeleteDiscountRequest {
-  string categoryName = 1;
+  int32 Id = 1;
 }
 
 message DeleteDiscountResponse {

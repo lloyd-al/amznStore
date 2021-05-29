@@ -1,5 +1,5 @@
 ﻿using amznStore.Services.Discount.Core.Interfaces;
-using amznStore.Services.Discount.Core.Repositories;
+using amznStore.Services.Discount.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

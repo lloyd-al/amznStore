@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace amznStore.Common.Core.Interfaces
 {
@@ -11,5 +12,6 @@ namespace amznStore.Common.Core.Interfaces
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
+        Task Save();
     }
 }

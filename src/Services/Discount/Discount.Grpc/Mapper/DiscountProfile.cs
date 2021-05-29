@@ -8,6 +8,7 @@ namespace amznStore.Services.Discount.Grpc.Mapper
     {
         public DiscountProfile()
         {
+            CreateMap<CouponModel, Coupon>();
             CreateMap<Coupon, CouponModel>().ReverseMap();
         }
     }

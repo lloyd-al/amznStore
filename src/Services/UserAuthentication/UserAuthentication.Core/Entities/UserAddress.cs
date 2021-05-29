@@ -21,6 +21,7 @@ namespace amznStore.Services.UserAuthentication.Core.Entities
         [Required]
         public string ZipCode { get; set; }
         public bool Default { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? AddressAdded { get; set; }
 
         [ForeignKey("UserId")]

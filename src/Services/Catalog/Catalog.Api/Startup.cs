@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System;
 using System.Linq;
 using System.Net.Mime;
@@ -49,15 +50,26 @@ namespace Catalog.Api
                 AddNewtonsoftJson(options => 
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            // accepts any access token issued by identity server
             //services.AddAuthentication("Bearer")
             //        .AddJwtBearer("Bearer", options =>
             //        {
-            //            options.Authority = "https://localhost:5005";
+            //            options.Authority = "https://localhost:44340";
             //            options.TokenValidationParameters = new TokenValidationParameters
             //            {
             //                ValidateAudience = false
             //            };
             //        });
+
+            // adds an authorization policy to make sure the token is for scope 'catalogapi'
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("ApiScope", policy =>
+            //    {
+            //        policy.RequireAuthenticatedUser();
+            //        policy.RequireClaim("scope", "catalogapi");
+            //    });
+            //});
 
         }
 
@@ -70,6 +82,7 @@ namespace Catalog.Api
                 app.UseSwaggerExtension(provider);
             }
 
+            app.UseGlobalExceptionHandler();
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -82,6 +95,7 @@ namespace Catalog.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                //endpoints.MapControllers().RequireAuthorization("ApiScope");
 
                 endpoints.MapHealthChecks("/api/health/ready", new HealthCheckOptions
                 {

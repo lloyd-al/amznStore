@@ -4,9 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>amznStore.Services.Discount.Api</AssemblyName>
     <RootNamespace>amznStore.Services.Discount.Api</RootNamespace>
+    <UserSecretsId>20ca070e-e7ef-4f14-afdb-dd68b081c952</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Dapper" Version="2.0.78" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
     <PackageReference Include="Npgsql" Version="5.0.4" />
