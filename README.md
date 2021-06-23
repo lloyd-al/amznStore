@@ -1,7 +1,13 @@
 # amznStore
 
 Build Amazon Clone e-commerce website using ASP.NET core and ReactJS based on Microservice Architecture.
-Other tool stack include Docker, RabbitMQ, Ocelot API Gateway, Atlas MongoDB, Redis, SqlServer.
+Other tool stack include Docker, RabbitMQ, Ocelot API Gateway, Atlas MongoDB, Redis, MS SQL Server.
+
+The application provides feature like:
+Online Shopping
+Discount Implementation
+Dark Mode Theme for the Site
+User Authentication
 
 **Frontend application built using ReactJS**
 State Management using Redux, Thunk, Saga, Reselect, Hooks \
