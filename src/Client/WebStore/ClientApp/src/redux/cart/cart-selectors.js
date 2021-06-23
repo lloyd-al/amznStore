@@ -1,6 +1,7 @@
 ﻿import { createSelector } from 'reselect';
 
 const selectCart = state => state.cart;
+const selectDiscount = state => state.discount;
 
 export const selectCartItems = createSelector(
     [selectCart],
@@ -25,4 +26,13 @@ export const selectCartTotal = createSelector(
                 accumalatedQuantity + cartItem.quantity * cartItem.product.currentPrice,
             0
         )
+);
+
+export const selectDiscountedCartTotal = createSelector(
+    [selectDiscount, selectCartTotal],
+    (discountState, cartTotal) => {
+        return (
+            cartTotal - (cartTotal * (discountState.discount.discountPercentage / 100))
+        );
+    }
 );

@@ -18,7 +18,7 @@ export const AuthenticationService = {
     update,
     delete: _delete,
     currentUser: currentUserSubject.asObservable(),
-    get userValue() { return currentUserSubject.value }
+    get currentUserValue() { return currentUserSubject.value }
 };
 
 
@@ -26,8 +26,10 @@ function login(email, password) {
     return AxiosWrapper.post(`${baseAuthUrl}/authenticate`, { email, password })
         .then((response) => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            // publish user to subscribers and start timer to refresh token
+            localStorage.setItem('currentUser', JSON.stringify(response.data));
+            // publish user to subscribers
             currentUserSubject.next(response.data);
+            // start timer to refresh token
             startRefreshTokenTimer();
             return response.data;
         });

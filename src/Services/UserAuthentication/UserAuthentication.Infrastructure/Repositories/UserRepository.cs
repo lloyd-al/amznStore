@@ -105,7 +105,7 @@ namespace amznStore.Services.UserAuthentication.Infrastructure.Repositories
             if (await _userManager.CheckPasswordAsync(user, authenticateRequest.Password))
             {
                 authenticationResponse = _mapper.Map<AuthenticateResponse>(user);
-
+                authenticationResponse.Roles = await _userManager.GetRolesAsync(user);
                 // authentication successful so generate jwt and refresh tokens
                 var jwtToken = await Task.Run(() => _tokenRepository.GenerateJwtToken(user));
                 authenticationResponse.Token = jwtToken;

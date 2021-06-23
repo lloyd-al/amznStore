@@ -2,8 +2,8 @@
     position: absolute;
     display: flex;
     background-color: white;
-    top: 80px;
-    right: 180px;
+    top: 60px;
+    right: 0px;
     z-index: 999;
     border-radius: 4px;
 }

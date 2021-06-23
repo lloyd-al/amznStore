@@ -51,7 +51,7 @@ function _delete(url) {
 
 function authHeader() {
     // return auth header with jwt if user is logged in and request is to the api url
-    const user = AuthenticationService.userValue;
+    const user = AuthenticationService.currentUserValue;
     //const user = JSON.parse(localStorage.getItem('currentUser'));
     const isLoggedIn = user && user.Token;
     if (isLoggedIn) {

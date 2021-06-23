@@ -12,7 +12,7 @@ namespace amznStore.Services.Discount.Infrastructure
         {
             services.AddDbContext<DiscountDbContext>(options =>
                 options.UseSqlServer(
-                    configuration.GetConnectionString("UserAuthenticationDb"), options => {
+                    configuration.GetConnectionString("DiscountDb"), options => {
                         options.MigrationsAssembly(typeof(DiscountDbContext).Assembly.FullName);
                         options.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
                      }));

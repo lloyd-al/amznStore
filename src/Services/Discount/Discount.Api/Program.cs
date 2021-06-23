@@ -16,7 +16,7 @@ namespace amznStore.Services.Discount.Api
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-            host.MigrateDatabase<Program>();
+            //host.MigrateDatabase<Program>();
             host.Run();
         }
 

@@ -37,15 +37,15 @@ function useDropdownVisible(initialIsVisible) {
 
 const UserMenu = () => {
     const { ref, isDropdownVisible, setIsDropdownVisible } = useDropdownVisible(false);
-    const [user, setUser] = useState(AuthenticationService.currentUser);
+    const [user, setUser] = useState(AuthenticationService.currentUserValue);
 
     useEffect(() => {
-        setUser(AuthenticationService.userValue);
+        setUser(AuthenticationService.currentUserValue);
     }, []);
 
     return (
         <>
-            <div className="header__nav-option2" ref={ref}>
+            <div className="header__pane" ref={ref}>
                 <Link to="#" onClick={() => setIsDropdownVisible(value => !value)} className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.firstName}</span>

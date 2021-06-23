@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Layout } from './components/Layout';
 import ROUTES, { RenderRoutes } from './routes';
 
 import { AuthenticationService } from './services/auth-service'
+import { ThemeLayout } from './components/ThemeContext';
 
 import './App-style.css'
 
@@ -23,9 +23,9 @@ export default class App extends Component {
 
   render () {
     return (
-        <Layout>
+        <ThemeLayout>
             <RenderRoutes routes={ROUTES} />
-      </Layout>
+        </ThemeLayout>
     );
   }
 }

@@ -1,5 +1,5 @@
 ﻿.cartMain {
-    background-color: lightgray;
+    position:relative;
 }
 
 .cart-item {
@@ -20,4 +20,3 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
     color: grey;
 }
-

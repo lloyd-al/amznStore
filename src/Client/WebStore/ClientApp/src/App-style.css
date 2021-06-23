@@ -1,6 +1,6 @@
 /* Provide sufficient contrast against white background */
 body {
-    background-color:lightgray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
 
 a {

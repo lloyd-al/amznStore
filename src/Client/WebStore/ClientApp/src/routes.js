@@ -5,6 +5,7 @@ import { Register, Login, RegisterConfirmation, VerifyEmail } from './components
 
 const ROUTES = [
     { path: "/", key: "ROOT", exact: true, component: HomePage },
+    { path: "/home", key: "HOME", exact: true, component: HomePage },
     { path: "/shop", key: "SHOP", exact: false, component: ShopPage },
     { path: "/product", key: "PRODUCT", exact: false, component: ProductPage },
     { path: "/cart", key: "CART", exact: false, component: CartPage },

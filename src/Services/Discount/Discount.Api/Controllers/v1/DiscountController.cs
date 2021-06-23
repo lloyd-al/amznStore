@@ -50,8 +50,9 @@ namespace amznStore.Services.Discount.Api.Controllers.v1
             }
         }
 
-        [HttpGet("{couponCode}")]
-        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        [Route("[action]/{couponCode}")]
+        [HttpGet]
+        [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupon>> VerifyCoupon(string couponCode)
         {
             var coupon = await _repository.VerifyCoupon(couponCode, trackChanges: false);

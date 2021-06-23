@@ -1,0 +1,8 @@
+﻿const DiscountActionTypes = {
+    ADD_DISCOUNT: 'ADD_DISCOUNT',
+    REMOVE_DISCOUNT: 'REMOVE_DISCOUNT',
+    DISCOUNT_SUCCESS: 'DISCOUNT_SUCCESS',
+    DISCOUNT_ERROR: 'DISCOUNT_ERROR'
+};
+
+export default DiscountActionTypes;

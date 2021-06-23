@@ -14,7 +14,6 @@
     margin-bottom: 5px;
 }
 
-
 .btn_CheckOut {
     width: 80%;
     height: 30px;
@@ -28,4 +27,34 @@
     border-radius: 8px 8px 8px 8px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+}
+
+.divDiscountSection {
+    margin: 10px 5px 20px 5px;
+}
+
+.btn_ApplyDiscount {
+    height: 30px;
+    text-align: center;
+    font-size: small;
+    font-weight: 200;
+    background: #ffc100;
+    border: 1px solid;
+    border-radius: 8px 8px 8px 8px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
+
+.txtDiscountCode {
+    width: 200px;
+    height: 30px;
+    font-size: 10px;
+    margin-right: 8px;
+}
+
+.discountError {
+    font-size:10px;
+    color:red;
+    text-align:left;
+    margin-left:20px;
 }

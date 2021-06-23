@@ -1,0 +1,16 @@
+﻿/* Provide sufficient contrast against white background */
+:root {
+    --bg-color: gainsboro;
+    --text-color: #000;
+}
+
+[data-theme="dark"] {
+    --bg-color: #3F3F3F;
+    --text-color: #fff;
+}
+
+.Layout {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+

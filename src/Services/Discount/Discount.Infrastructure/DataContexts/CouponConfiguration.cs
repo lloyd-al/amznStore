@@ -12,10 +12,12 @@ namespace amznStore.Services.Discount.Infrastructure.DataContexts
             builder.HasData (
                 new Coupon
                 {
+                    Id = 1,
                     CategoryName = "ALL",
                     CouponCode = "ABC-XYZ",
                     DiscountPercentage = 10,
-                    ValidTill = DateTime.Today.AddMonths(2)
+                    ValidTill = DateTime.Today.AddMonths(2),
+                    CouponCreated = DateTime.UtcNow.Date
                 }
             );
         }

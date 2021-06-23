@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -16,7 +17,7 @@ namespace amznStore.Services.UserAuthentication.Core.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public List<string> Roles { get; set; }
+        public IEnumerable<string> Roles { get; set; }
         public string Token { get; set; }
         public string Message { get; set; }
         public bool IsAuthenticated { get; set; }

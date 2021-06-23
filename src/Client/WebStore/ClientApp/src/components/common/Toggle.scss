@@ -1,0 +1,66 @@
+﻿// This is the Control Panel
+// Change $scale to adjust size of button
+// Change $time to adjust transition time.
+
+$scale: 60px;
+$time: 1s;
+$slidercolor: #08577D;
+
+// A Template (Mixin) of all common codes, to stop repitition
+@mixin common ($display,$flex,$justify,$align,$width,$height,$bgcolor) {
+    display: $display;
+    flex-direction: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    width: $width;
+    height: $height;
+    background-color: $bgcolor;
+    transition: all $time ease;
+}
+
+.switch {
+    @include common(inline-block,column,center,null,$scale,$scale/2,null);
+    position: relative;
+
+    input[type=checkbox] {
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        background-color: $slidercolor;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        position: absolute;
+        border-radius: $scale/4;
+
+        &:before {
+            @include common(null,null,null,null,$scale/2,$scale/2,#a9a5a5);
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .scenary {
+            @include common(flex, row, space-between,null,null,null,null);
+            padding: 2px 5px 5px 5px;
+
+            img {
+                width: $scale/3;
+            }
+        }
+    }
+
+    input[type=checkbox]:checked + .slider {
+        background-color: #7a5d04;
+    }
+
+    input[type=checkbox]:checked + .slider:before {
+        transform: translateX(100%);
+    }
+}

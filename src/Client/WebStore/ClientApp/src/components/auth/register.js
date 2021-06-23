@@ -5,15 +5,18 @@ import * as Yup from 'yup';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined';
 
+import { useTheme } from '../ThemeContext';
 import { AuthenticationService } from '../../services/auth-service';
 
-import logo from '../../assets/amzn_logo.png';
+import blackLogo from '../../assets/amzn_black.png';
+import whiteLogo from '../../assets/amzn_white.png';
 import "./auth-style.css"
 
 function Register ({ location }) {
     // Declare a new state variable, which we'll call "count"
     const [errCount, setErrCount] = useState(0);
     const history = useHistory();
+    const themeState = useTheme();
 
     const initialValues = {
         firstname: '',
@@ -67,7 +70,10 @@ function Register ({ location }) {
     return (
         <div className="register_body">
             <Link to="/">
-                <img className="login__logo" src={logo} alt="Amzn logo" />
+                {themeState.darkMode
+                    ? <img className="login__logo" src={blackLogo} alt="Amzn logo" />
+                    : <img className="login__logo" src={whiteLogo} alt="Amzn logo" />
+                }
             </Link>
 
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>

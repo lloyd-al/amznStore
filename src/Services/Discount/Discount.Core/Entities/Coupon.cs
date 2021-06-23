@@ -19,6 +19,6 @@ namespace amznStore.Services.Discount.Core.Entities
         public DateTime ValidTill { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime CouponCreated { get; set; }
+        public DateTime CouponCreated { get; set; } = DateTime.UtcNow.Date;
     }
 }

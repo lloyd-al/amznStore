@@ -26,7 +26,7 @@ namespace amznStore.Services.Discount.Infrastructure.Repositories
                     .SingleOrDefaultAsync();
 
         public async Task<Coupon> VerifyCoupon(string couponCode, bool trackChanges) =>
-            await FindByCondition(c => (c.CouponCode.Equals(couponCode) && c.ValidTill <= DateTime.UtcNow.Date), trackChanges)
+            await FindByCondition(c => (c.CouponCode.Equals(couponCode) && DateTime.Compare(c.ValidTill.Date, DateTime.Today.Date) > 0), trackChanges)
                     .SingleOrDefaultAsync();
 
         public void CreateCoupon(Coupon coupon) => Add(coupon);
